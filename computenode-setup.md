@@ -68,22 +68,5 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
         - do nothing
 6. Allow the lid to be closed without disabling SSH
   - sudo vi /etc/systemd/logind.conf
-
-
-Also fixed lid closing
-
-Don't know if you're still looking for this, but to disable entering the sleep mode I had to edit the /etc/systemd/logind.conf file and modified the line:
-
-"#HandleLidSwitch=suspend"
-
-to
-
-HandleLidSwitch=ignore
-
-Then rebooted.
-
-sudo restart systemd-logind
-
-
-Also installed libopenmpi-dev
-
+    - change the `#HandleLidSwitch=suspend` to `HandleLidSwitch=ignore`
+    - `sudo restart systemd-logind`
