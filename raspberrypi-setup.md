@@ -47,9 +47,13 @@ Serial          : 00000000dbfe5a08
     - Obtain Win32DiskImager and install
     - Obtain the OS image `2015-05-05-raspibian-wheezy.img`
     - Use Win32DiskImager to put the OS image on the MicroSD card
-    - eject the MicroSD card and insert it into the RaspberryPi2
+    - Eject the MicroSD card and insert it into the RaspberryPi2
 2. Boot the RaspberryPi2
   - Set up the RaspberryPi2 with a monitor (HDMI), keyboard (USB), and internet connection (WiFi USB or Ethernet)
+  - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen
+3. Configure the RaspberryPi2
+  - Change the user password to ********
+  - Enable 
 
 ## Acronyms
 
