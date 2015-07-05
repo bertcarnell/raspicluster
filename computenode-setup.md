@@ -66,6 +66,8 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
     - Power
       - When lid is closed, when plugged in
         - do nothing
+6. Allow the lid to be closed without disabling SSH
+  - sudo vi /etc/systemd/logind.conf
 
 
 Also fixed lid closing
