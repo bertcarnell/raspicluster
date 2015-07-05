@@ -53,7 +53,19 @@ Serial          : 00000000dbfe5a08
   - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen
 3. Configure the RaspberryPi2
   - Change the user password to ********
-  - Enable 
+  - Enable boot to Desktop / Scratch: command line
+  - Internationalization Options
+    - Change Locale: en_US.UTF-8 UTF-8
+    - Change Time Zone: US, Eastern
+  - Advanced Options
+    - Hostname: N01, N02, N03, etc
+    - SSH: enable
+  - Finish
+4. Reboot
+5. Install packages
+  - `sudo apt-get upgrade`
+  - `sudo apt-get install r-base`
+  - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
 
 ## Acronyms
 
