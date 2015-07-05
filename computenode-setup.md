@@ -32,31 +32,40 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
 
 ## Installation Notes
 
-1. Install operating system on the MicroSD card
-  - On Windows 8.1
-    - Quick Format the MicroSD card
-    - Obtain Win32DiskImager and install
-    - Obtain the OS image `2015-05-05-raspibian-wheezy.img`
-    - Use Win32DiskImager to put the OS image on the MicroSD card
-    - Eject the MicroSD card and insert it into the RaspberryPi2
-2. Boot the RaspberryPi2
-  - Set up the RaspberryPi2 with a monitor (HDMI), keyboard (USB), and internet connection (WiFi USB or Ethernet)
-  - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen
-3. Configure the RaspberryPi2
-  - Change the user password to ********
-  - Enable boot to Desktop / Scratch: command line
-  - Internationalization Options
-    - Change Locale: en_US.UTF-8 UTF-8
-    - Change Time Zone: US, Eastern
-  - Advanced Options
-    - Hostname: N01, N02, N03, etc
-    - SSH: enable
-  - Finish
-4. Reboot
-5. Install packages
+1. Install Ubuntu 14.04 LTS Developer
+  - on the Dell PC, use F12 to enter the boot menu
+2. Installation Configuration
+  - User: `pi`
+  - Password: `********`
+  - Computer Name: `ThinkPad` and `Dell`
+3. Pacakge installation
   - `sudo apt-get upgrade`
-  - `sudo apt-get install r-base`
-  - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
+  - `sudo apt-get install r-base` (R 3.0.2)
+  - `sudo apt-get install subversion`
+  - `sudo apt-get install git`
+  - `sudo apt-get install openjdk-7-jre-headless`
+  - `sudo apt-get install openssh-server` (To allow ssh into the node)
+  - `sudo ssh restart`
+4. Remove unnecessary packages.
+  - From the Ubuntu software center:
+    - Installed
+      - Office
+        - LibreWriter
+      - Internet
+        - Thunderbird Mail
+        - Empathy Internet Messaging
+        - Browser-app
+      - Graphics
+        - Libre Draw
+        - Simple Scan
+        - Photo Manager
+      - Games
+        - Remove all
+5. Allow the lid to be closed without suspending
+  - Ubuntu, System Settings
+    - Power
+      - When lid is closed, when plugged in
+        - do nothing
 
 
 Also fixed lid closing
