@@ -2,9 +2,7 @@
 
 ## Hardware
 
-*Update*
-
-- Raspberry Pi Model B+ 1 GB
+- Raspberry Pi Model B+ 512 MB
   - 700MHz Broadcom BCM2835 CPU / 512 MB SDRAM @ 400MHz
   - 40 pin extended GPIO
   - MicroSD slot
@@ -15,32 +13,28 @@
 
 ### Memory
 
-*Needs Update*
-
 ```
-pi@N01 ~ $ cat /proc/meminfo
-MemTotal:         949408 kB
+pi@raspirobot ~ $ cat /proc/meminfo
+MemTotal:         380780 kB
 ```
 
 ### Processor
 
-*Needs Update*
-
 ```
-pi@N01 ~ $ cat /proc/cpuinfo
-...
-model name      : ARMv7 Processor rev 5 (v7l)
-BogoMIPS        : 38.40
-Features        : half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm
+pi@raspirobot ~ $ cat /proc/cpuinfo
+processor       : 0
+model name      : ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS        : 2.00
+Features        : half thumb fastmult vfp edsp java tls
 CPU implementer : 0x41
 CPU architecture: 7
 CPU variant     : 0x0
-CPU part        : 0xc07
-CPU revision    : 5
+CPU part        : 0xb76
+CPU revision    : 7
 
-Hardware        : BCM2709
-Revision        : a21041
-Serial          : 00000000dbfe5a08
+Hardware        : BCM2708
+Revision        : 0010
+Serial          : 00000000bd278db2
 ```
 
 ## Installation Notes
@@ -66,4 +60,5 @@ Serial          : 00000000dbfe5a08
   - Finish
 4. Reboot
 5. Install packages
+  - `sudo apt-get update`
   - `sudo apt-get upgrade`
