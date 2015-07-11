@@ -20,6 +20,6 @@ text search, the addresses are slightly obfuscated.
 
 |Name       |MAC Address           |IP Address   |
 |:---------:|:--------------------:|:-----------:|
-|raspberrypi|                      |192.168.0.108|
+|raspberrypi|00xxC1cc41xx29xx46xx46|192.168.0.108|
 |raspirobot |80xx3Fxx5DxxC6xx68xxEE|192.168.0.148|
 
