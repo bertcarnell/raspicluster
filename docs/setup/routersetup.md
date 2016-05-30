@@ -3,7 +3,7 @@ port forwarding to allow for ssh into the cluster.
 
 These directions are for a Netgear Genie - Nighthawk X6 R8000 - v 1.0.3.4_1.1.2
 
-Set up static IP addresses internally
+**Set up static IP addresses internally**
 
 1. Advanced Tab
 2. Setup
@@ -13,7 +13,7 @@ Set up static IP addresses internally
 6. Repeat for all nodes
 7. reboot the router and reboot all nodes
 
-Set up port forwarding
+**Set up port forwarding**
 
 1. Advanced Tab
 2. Advanced Setup
