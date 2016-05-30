@@ -1,4 +1,4 @@
-# Compute Node Set Up
+# Head Node Set Up
 
 ## Hardware
 
