@@ -15,11 +15,12 @@ text search, the addresses are slightly obfuscated.
 |N01     |B8xx27xxEBxxFExx5Axx08|192.168.0.151|
 |N02     |B8xx27xxEBxxBCxxF1xx96|192.168.0.152|
 |N03     |B8xx27xxEBxx1ExxA7xx33|192.168.0.153|
+|N04     |B8xx27xxEBxx27xx8DxxB2|192.168.0.154|
 
 #### Other Raspberry Pi's
 
 |Name       |MAC Address           |IP Address   |
 |:---------:|:--------------------:|:-----------:|
-|raspberrypi|                      |192.168.0.108|
-|raspirobot |80xx3Fxx5DxxC6xx68xxEE|192.168.0.148|
+|raspberrypi|00xxC1xx41xx29xx46xx46|192.168.0.108|
+|raspirobot2|80xx3Fxx5DxxC6xx68xxEE|192.168.0.148|
 
