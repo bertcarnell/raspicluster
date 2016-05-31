@@ -70,3 +70,9 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
   - sudo vi /etc/systemd/logind.conf
     - change the `#HandleLidSwitch=suspend` to `HandleLidSwitch=ignore`
     - `sudo restart systemd-logind`
+
+## install ganglia monitoring
+
+1. sudo apt-get install ganglia-monitor
+2. sudo nano /etc/ganglia/gmond.conf
+
