@@ -103,11 +103,25 @@ udp_recv_channel {
 7. `sudo service apache2 restart`
 8. From any network system `http:\\192.168.0.150\ganglia`
 
+## Edit the /etc/hosts for domain name resolution
+
+1. `sudo nano /etc/hosts`
+2. add these lines and save
+
+```
+192.168.0.151 N01
+192.168.0.152 N02
+192.168.0.153 N03
+192.168.0.154 N04
+192.168.0.149 ThinkPad
+```
+
 ## Install SALT for cluster management
 
 1. `wget -O - https://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
 2. `sudo nano /etc/apt/sources.list.d/saltstack.list`
     - Add the line `deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest trusty main`
 3. `sudo apt-get install salt-master`
-
-
+4. `sudo salt-master -d`
+4. `salt-key -F master`
+    - Copy the `master.pub` fingerprint for use in the minions
