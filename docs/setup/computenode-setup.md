@@ -73,6 +73,30 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
 
 ## install ganglia monitoring
 
-1. sudo apt-get install ganglia-monitor
-2. sudo nano /etc/ganglia/gmond.conf
+1. `sudo apt-get install ganglia-monitor`
+2. `sudo nano /etc/ganglia/gmond.conf`
+
+ ```
+cluster {
+name = "raspicluster"
+owner = "unspecified"
+latlong = "unspecified"
+url = "unspecified"
+}
+
+udp_send_channel {
+#mcast_join = 239.2.11.71 ## comment out
+host = 192.168.0.150
+port = 8649
+ttl = 1
+}
+
+/*udp_recv_channel {
+mcast_join = 239.2.11.71
+port = 8649
+bind = 239.2.11.71
+}*/
+```
+
+3. `sudo service ganglia-monitor restart`
 
