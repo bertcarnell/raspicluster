@@ -57,3 +57,50 @@ For a more full discussion, see this article:  [HowToGeek](http://www.howtogeek.
     - Also, disallow root logins from the WWW `PermitRootLogin no`
 5. Restart SSH: `sudo service ssh restart`
 
+## Generate Keys to allow ssh to compute nodes without a password
+
+1. `ssh-keygen`
+    - accept default: <Enter>
+    - no passphrase: <Enter>, <Enter again>
+    - key fingerprint is displayed
+2. `ssh-copy-id pi@192.168.0.149`, `ssh-copy-id pi@192.168.0.151` through `.154`
+
+## Set up [Ganglia](https://sourceforge.net/projects/ganglia/) for cluster monitoring
+
+See this [tutorial](https://www.digitalocean.com/community/tutorials/introduction-to-ganglia-on-ubuntu-14-04) for more information.
+
+1. `sudo apt-get install ganglia-monitor rrdtool gmetad ganglia-webfrontend`
+2. `sudo cp /etc/ganglia-webfrontend/apache.conf /etc/apache2/sites-enabled/ganglia.conf`
+3. `sudo gedit /etc/ganglia/gmetad.conf`
+    - Change this line `data_source "my cluster" localhost` to `data_source "raspicluster" 60 localhost 192.168.0.149 192.168.0.151 192.168.0.152 192.168.0.153 192.168.0.154
+4. `sudo gedit /etc/ganglia/gmond.conf`
+    - Create this cluster section and other edits:
+
+```
+cluster {
+  name = "raspicluster"
+  owner = "bertcarnell"
+  latlong = "39.9612 N, 82.9988 W"
+  url = "https://github.com/bertcarnell/raspicluster"
+}
+
+udp_send_channel {
+  #mcast_join = 239.2.11.71 ## comment out
+  host = localhost ## add
+  port = 8649
+  ttl = 1
+}
+
+udp_recv_channel {
+  #mcast_join = 239.2.11.71 ## comment out
+  port = 8649
+  #bind = 239.2.11.71 ## comment out
+}
+```
+
+5. `sudo service ganglia-monitor restart`
+6. `sudo service gmetad restart`
+7. `sudo service apache2 restart`
+8. From any network system `http:\\192.168.0.150\ganglia`
+
+
