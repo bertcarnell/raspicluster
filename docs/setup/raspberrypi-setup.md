@@ -67,6 +67,10 @@ Serial          : 00000000dbfe5a08
   - `sudo apt-get install r-base`
   - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
 
+## Ganglia
+
+Follow [these](https://github.com/bertcarnell/raspicluster/blob/master/docs/setup/computenode-setup.md#install-ganglia-monitoring) directions
+
 ## Acronyms
 
 - GB = gigabyte
