@@ -99,23 +99,3 @@ bind = 239.2.11.71
 ```
 
 3. `sudo service ganglia-monitor restart`
-
-## Edit the `/etc/hosts` for domain name resolution
-
-1. `sudo nano /etc/hosts`
-2. add these lines and save
-
-```
-192.168.0.150 salt
-```
-
-## Install SALT for cluster management
-
-1. `wget -O - https://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
-2. `sudo nano /etc/apt/sources.list.d/saltstack.list`
-    - Add the line `deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/latest trusty main`
-3. `sudo apt-get install salt-minion`
-4. `sudo salt-minion -d`
-5. Edit the configuration file
-    - `sudo nano /etc/salt/minion`
-    - replace the line `#master_finger ''` with `master_finger '<fingerprint from host goes here>'`
