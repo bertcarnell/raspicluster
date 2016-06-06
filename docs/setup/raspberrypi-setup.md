@@ -20,6 +20,18 @@ MemTotal:         949408 kB
 
 Approx 0.9 GB
 
+```
+pi@N01:~ $ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        30G  2.7G   26G  10% /
+devtmpfs        459M     0  459M   0% /dev
+tmpfs           463M     0  463M   0% /dev/shm
+tmpfs           463M  6.2M  457M   2% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+tmpfs           463M     0  463M   0% /sys/fs/cgroup
+/dev/mmcblk0p1   63M   21M   43M  33% /boot
+```
+
 ### Processor
 
 ```
@@ -66,12 +78,23 @@ Serial          : 00000000dbfe5a08
 5. Install packages
   - `sudo apt-get update`
   - `sudo apt-get upgrade`
+  - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
+6. Install R from Source to use a more updated version than that available with Jessie
   - `sudo nano /etc/apt/sources.list`
       - uncomment the line that starts `#deb-src`
   - `sudo apt-get update`
-  - `sudo apt-get build-dep r-base`
-  - `sudo apt-get install r-base`
-  - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
+  - `sudo apt-get build-dep r-base` to ensure the right dependencies are there for R without installing the older version with Jessie
+  - `sudo apt-get install subversion` to get the R svn checkout
+  - `sudo apt-get install rsync` to get the recommended R packages
+  - `sudo apt-get install libcurl4-openssl-dev` to meet the requirements in R configure for curl.h
+  - `mkdir ~/repositories`
+  - `svn checkout https://svn.r-project.org/R/branch/R-3-3-branch ~/repositories/R3.3.patched`
+  - `mkdir ~/repositories/R3.3.patched.build`
+  - `cd ~/repositories/R3.3.patched.build`
+  - `../R3.3.patched/configure`
+  - `make` this will take multiple hours
+  - `make check` this is optional and is most necessary when building for a new architecture
+  - `sudo make install`
 
 ## Ganglia
 
