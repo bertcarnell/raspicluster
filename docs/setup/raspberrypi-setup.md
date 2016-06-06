@@ -45,17 +45,18 @@ Serial          : 00000000dbfe5a08
   - On Windows 8.1
     - Quick Format the MicroSD card
     - Obtain Win32DiskImager and install
-    - Obtain the OS image `2015-05-05-raspibian-wheezy.img`
+    - Obtain the OS image `2016-05-27-raspbian-jessie-lite.img`
     - Use Win32DiskImager to put the OS image on the MicroSD card
     - Eject the MicroSD card and insert it into the RaspberryPi2
 2. Boot the RaspberryPi2
   - Set up the RaspberryPi2 with a monitor (HDMI), keyboard (USB), and internet connection (WiFi USB or Ethernet)
-  - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen
+  - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen.  if not use `sudo raspi-config`.
 3. Configure the RaspberryPi2
+  - Expand the file system (if necessary)
   - Change the user password to ********
-  - Enable boot to Desktop / Scratch: command line
+  - Boot Options:  B1 Console
   - Internationalization Options
-    - Change Locale: en_US.UTF-8 UTF-8
+    - Change Locale: en_US.UTF-8 UTF-8 and then select en_US-UTF-8
     - Change Time Zone: US, Eastern
   - Advanced Options
     - Hostname: N01, N02, N03, etc
@@ -63,7 +64,12 @@ Serial          : 00000000dbfe5a08
   - Finish
 4. Reboot
 5. Install packages
+  - `sudo apt-get update`
   - `sudo apt-get upgrade`
+  - `sudo nano /etc/apt/sources.list`
+      - uncomment the line that starts `#deb-src`
+  - `sudo apt-get update`
+  - `sudo apt-get build-dep r-base`
   - `sudo apt-get install r-base`
   - `sudo apt-get install openmpi-bin` (if needed openmpi-dev)
 
