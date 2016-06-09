@@ -66,6 +66,10 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
     - Power
       - When lid is closed, when plugged in
         - do nothing
+  - or from the command line
+    - `sudo nano /etc/UPower/UPower.conf`
+    - Change `IgnoreLid=false` to `true`
+    - `service upower restart`
 6. Allow the lid to be closed without disabling SSH
   - sudo vi /etc/systemd/logind.conf
     - change the `#HandleLidSwitch=suspend` to `HandleLidSwitch=ignore`
