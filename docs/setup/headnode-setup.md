@@ -62,7 +62,7 @@ For a more full discussion, see this article:  [HowToGeek](http://www.howtogeek.
     - accept default: <Enter>
     - no passphrase: <Enter>, <Enter again>
     - key fingerprint is displayed
-2. `ssh-copy-id pi@192.168.0.149`, `ssh-copy-id pi@192.168.0.151` through `.154`
+2. `ssh-copy-id pi@192.168.0.148`, `ssh-copy-id pi@192.168.0.149`, `ssh-copy-id pi@192.168.0.151` through `.154`
 
 ## Set up [Ganglia](https://sourceforge.net/projects/ganglia/) for cluster monitoring
 
@@ -71,7 +71,7 @@ See this [tutorial](https://www.digitalocean.com/community/tutorials/introductio
 1. `sudo apt-get install ganglia-monitor rrdtool gmetad ganglia-webfrontend`
 2. `sudo cp /etc/ganglia-webfrontend/apache.conf /etc/apache2/sites-enabled/ganglia.conf`
 3. `sudo gedit /etc/ganglia/gmetad.conf`
-    - Change this line `data_source "my cluster" localhost` to `data_source "raspicluster" 60 localhost 192.168.0.149 192.168.0.151 192.168.0.152 192.168.0.153 192.168.0.154`
+    - Change this line `data_source "my cluster" localhost` to `data_source "raspicluster" 60 localhost 192.168.0.148, 192.168.0.149 192.168.0.151 192.168.0.152 192.168.0.153 192.168.0.154`
 4. `sudo gedit /etc/ganglia/gmond.conf`
     - Create this cluster section and other edits:
 
