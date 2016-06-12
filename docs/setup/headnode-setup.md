@@ -47,12 +47,11 @@ For a more full discussion, see this article:  [HowToGeek](http://www.howtogeek.
     - disallow multiple uses: n
     - increase window: n
     - rate limit: y
-3. google-authenticator will display a secret key that you can add to the app on the phone.  It will also show a verification key which should match the first code generated.  Finally, it will display scratch codes in case your phone is not avaialble.
+3. google-authenticator will display a secret key that you can add to the app on the phone.  Finally, it will display scratch codes in case your phone is not avaialble.
 4. Require google-authenticator in ssh:
-    - `sudo gedit /etc/pam.d/sshd`
+    - `sudo nano /etc/pam.d/sshd`
     - add this line to the file at the end: `auth required pam_google_authenticator.so`
-    - close gedit
-    - `sudo /etc/ssh/sshd_config`
+    - `sudo nano /etc/ssh/sshd_config`
     - Change this parameter to yes `ChallengeResponseAuthentication yes`
     - Also, disallow root logins from the WWW `PermitRootLogin no`
 5. Restart SSH: `sudo service ssh restart`
