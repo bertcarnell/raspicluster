@@ -1,10 +1,20 @@
-# install snow on all nodes
-# install.packages("snow", repos=http://cran.stat.ucla.edu")
+# install snow and Rmpi on all nodes
+# install.packages(c("snow","Rmpi"), repos=http://cran.stat.ucla.edu")
+# ssh into all nodes to set the fingerprint
 
 require(snow)
-nodes <- c("N01","N02","N03","ThinkPad")
-nodes <- c("192.168.0.151","192.168.0.152","192.168.0.153","192.168.0.149")
-
-cl <- makeCluster(nodes, type="SOCK")
+nodes <- c("N01","N02")
+setDefaultClusterOptions("homogeneous"=FALSE, type="SOCK")
+pinode <- list(host="N01", 
+                       rscript="/usr/local/lib/R/bin/Rscript", 
+                       snowlib="/usr/local/lib/R/library"#,
+                       #rhome="/usr/local/lib/R",
+                       #rprog="/usr/local/lib/R/bin/R",
+                       #scriptdir="/usr/local/lib/R/library/snow"
+                       )
+pinode2 <- pinode; pinode$host <- "N02"
+nodespecs <- list(pinode,
+                  pinode2)
+cl <- makeSOCKcluster(nodespecs)
 
 ## aLL Wrong
