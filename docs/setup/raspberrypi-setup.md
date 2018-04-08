@@ -62,6 +62,7 @@ Serial          : 00000000dbfe5a08
     - Eject the MicroSD card and insert it into the RaspberryPi2
 2. Boot the RaspberryPi2
   - Set up the RaspberryPi2 with a monitor (HDMI), keyboard (USB), and internet connection (WiFi USB or Ethernet)
+  - If necessary, the default login is user: pi, password: raspberry
   - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen.  if not use `sudo raspi-config`.
 3. Configure the RaspberryPi2
   - Expand the file system (if necessary)
@@ -88,7 +89,7 @@ Serial          : 00000000dbfe5a08
   - `sudo apt-get install rsync` to get the recommended R packages
   - `sudo apt-get install libcurl4-openssl-dev` to meet the requirements in R configure for curl.h
   - `mkdir ~/repositories`
-  - `svn checkout https://svn.r-project.org/R/branch/R-3-3-branch ~/repositories/R3.3.patched`
+  - `svn checkout https://svn.r-project.org/R/branches/R-3-3-branch ~/repositories/R3.3.patched`
   - `cd R3.3.patched`
   - `./tools/rsync-recommended`
   - `mkdir ~/repositories/R3.3.patched.build`
