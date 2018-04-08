@@ -17,8 +17,8 @@ text search, the addresses are slightly obfuscated.
 |N02          |B8xx27xxEBxxBCxxF1xx96|192.168.0.152|
 |N03          |B8xx27xxEBxx1ExxA7xx33|192.168.0.153|
 |N04          |B8xx27xxEBxx27xx8DxxB2|192.168.0.154|
-|N10          |B8xx27xxEBxx87xxDAxx1C|192.168.0.150|
-|N11          |B8xx27xxEBxxCAxx08xx37|192.168.0.155|
+|N10          |B8xx27xxEBxx87xxDAxx1C|192.168.0.155|
+|N11          |B8xx27xxEBxxCAxx08xx37|192.168.0.150|
 
 #### Other Raspberry Pi's
 
