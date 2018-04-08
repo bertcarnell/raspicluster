@@ -1,4 +1,4 @@
-# Compute Node Set Up
+# Non-RaspberryPi Compute Node Set Up
 
 ## Hardware
 
