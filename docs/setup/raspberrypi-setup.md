@@ -82,11 +82,11 @@ Serial          : 00000000dbfe5a08
 5. Install packages
   - `sudo apt-get update`
   - `sudo apt-get upgrade`
-  - `sudo apt-get install openmpi-bin libopenmpi-dev`
 6. Install R from Source to use a more updated version than that available with Jessie
   - `sudo nano /etc/apt/sources.list`
       - uncomment the line that starts `#deb-src`
   - `sudo apt-get update`
+  - `sudo apt-get install openmpi-bin libopenmpi-dev`
   - `sudo apt-get build-dep r-base` to ensure the right dependencies are there for R without installing the older version with Jessie
   - `sudo apt-get install subversion` to get the R svn checkout
   - `sudo apt-get install rsync` to get the recommended R packages
