@@ -65,14 +65,17 @@ Serial          : 00000000dbfe5a08
   - If necessary, the default login is user: pi, password: raspberry
   - Plug in the power, the RaspberryPi2 should boot and should initially start in the `raspi-config` screen.  if not use `sudo raspi-config`.
 3. Configure the RaspberryPi2
-  - Expand the file system (if necessary)
   - Change the user password to ********
   - Boot Options:  B1 Console
-  - Internationalization Options
+  - Localisation Options
     - Change Locale: en_US.UTF-8 UTF-8 and then select en_US-UTF-8
     - Change Time Zone: US, Eastern
-  - Advanced Options
+    - Change Keyboard Layout: English US
+  - Network Options
     - Hostname: N01, N02, N03, etc
+  - Advanced Options
+    - Expand the file system (if necessary)
+  - Interfacing Options:
     - SSH: enable
   - Finish
 4. Reboot
