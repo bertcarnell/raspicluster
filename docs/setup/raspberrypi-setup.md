@@ -93,7 +93,7 @@ Serial          : 00000000dbfe5a08
   - `sudo apt-get install libcurl4-openssl-dev` to meet the requirements in R configure for curl.h
   - `mkdir ~/repositories`
   - `svn checkout https://svn.r-project.org/R/branches/R-3-3-branch ~/repositories/R3.3.patched`
-  - `cd R3.3.patched`
+  - `cd ~/repositories/R3.3.patched`
   - `./tools/rsync-recommended`
   - `mkdir ~/repositories/R3.3.patched.build`
   - `cd ~/repositories/R3.3.patched.build`
