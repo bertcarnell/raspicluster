@@ -19,6 +19,7 @@ text search, the addresses are slightly obfuscated.
 |N03          |B8xx27xxEBxx1ExxA7xx33|192.168.0.153|
 |N04          |B8xx27xxEBxx27xx8DxxB2|192.168.0.154|
 |N05          |B8xx27xxEBxx87xxDAxx1C|192.168.0.155|
+|N06 (HP)     |10xx1Fxx74xxFCxx7Cxx43|192.168.0.156|
 
 #### Other Raspberry Pi's
 
