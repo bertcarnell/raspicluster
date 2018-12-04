@@ -26,3 +26,7 @@ make
 make check
 
 sudo apt-get install r-base
+
+sudo apt-get install gdebi-core
+wget https://download1.rstudio.org/rstudio-xenial-1.1.463-amd64.deb
+sudo gdebi rstudio-xenial-1.1.463-amd64.deb
