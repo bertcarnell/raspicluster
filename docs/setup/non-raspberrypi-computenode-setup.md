@@ -40,12 +40,15 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
   - Computer Name: `ThinkPad` and `Dell`
 3. Pacakge installation
   - `sudo apt-get upgrade`
-  - `sudo apt-get install r-base`
   - `sudo apt-get install subversion`
   - `sudo apt-get install git`
   - `sudo apt-get install openjdk-8-jre-headless`
   - `sudo apt-get install openssh-server` (To allow ssh into the node)
   - `sudo ssh restart`
+  - `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9`
+  - `sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'`
+  - `sudo apt-get update`
+  - `sudo apt-get install r-base`
 4. Remove unnecessary packages. (If the minimal install is used, this is unnecessary)
   - From the Ubuntu software center:
     - Installed
