@@ -32,7 +32,7 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
 
 ## Installation Notes
 
-1. Install Ubuntu 14.04 LTS Developer
+1. Install Ubuntu 18.04 LTS Developer with minimal install
   - on the Dell PC, use F12 to enter the boot menu
 2. Installation Configuration
   - User: `pi`
@@ -40,13 +40,13 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
   - Computer Name: `ThinkPad` and `Dell`
 3. Pacakge installation
   - `sudo apt-get upgrade`
-  - `sudo apt-get install r-base` (R 3.0.2)
+  - `sudo apt-get install r-base`
   - `sudo apt-get install subversion`
   - `sudo apt-get install git`
-  - `sudo apt-get install openjdk-7-jre-headless`
+  - `sudo apt-get install openjdk-8-jre-headless`
   - `sudo apt-get install openssh-server` (To allow ssh into the node)
   - `sudo ssh restart`
-4. Remove unnecessary packages.
+4. Remove unnecessary packages. (If the minimal install is used, this is unnecessary)
   - From the Ubuntu software center:
     - Installed
       - Office
@@ -71,7 +71,7 @@ flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov 
     - Change `IgnoreLid=false` to `true`
     - `service upower restart`
 6. Allow the lid to be closed without disabling SSH
-  - sudo vi /etc/systemd/logind.conf
+  - `sudo nano /etc/systemd/logind.conf`
     - change the `#HandleLidSwitch=suspend` to `HandleLidSwitch=ignore`
     - `sudo restart systemd-logind`
 
